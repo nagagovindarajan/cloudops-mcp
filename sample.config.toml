@@ -1,0 +1,78 @@
+[STORAGE]
+SQLITE_DB = "data/db/robo_swarm.db"
+SCREENSHOTS_DIR = "data/screenshots"
+PDFS_DIR = "data/pdfs"
+PROJECTS_DIR = "data/projects"
+LOGS_DIR = "data/logs"
+REPOS_DIR = "data/repos"
+
+[API_KEYS]
+BING = "<YOUR_BING_API_KEY>"
+GOOGLE_SEARCH = "<YOUR_GOOGLE_SEARCH_API_KEY>"
+GOOGLE_SEARCH_ENGINE_ID = "<YOUR_GOOGLE_SEARCH_ENGINE_ID>"
+CLAUDE = "<YOUR_CLAUDE_API_KEY>"
+OPENAI = "<YOUR_OPENAI_API_KEY>"
+GEMINI = ["<YOUR_GEMINI_API_KEY>", "<KEY2>"]
+MISTRAL = "<YOUR_MISTRAL_API_KEY>"
+GROQ = "<YOUR_GROQ_API_KEY>"
+NETLIFY = "<YOUR_NETLIFY_API_KEY>"
+CURRENT_INDEX = 0
+CURRENT_INDEX_FETCHED_TIME = 1742836283
+
+[API_ENDPOINTS]
+BING = "https://api.bing.microsoft.com/v7.0/search"
+GOOGLE = "https://www.googleapis.com/customsearch/v1"
+OLLAMA = "http://127.0.0.1:11434"
+
+LM_STUDIO = "http://localhost:1234/v1"
+OPENAI = "https://api.openai.com/v1"
+
+
+[LOGGING]
+LOG_REST_API = "true"
+LOG_PROMPTS = "false"
+
+[TIMEOUT]
+INFERENCE = 60
+
+[AWS]
+PROFILE = "chatbot"
+
+[CHROMA]
+PATH = "data/chroma"
+EMBEDDING_MODEL = "all-MiniLM-L6-v2"
+
+[MODEL]
+TINY = "Gemini 1.5 Flash-8B" # Less intelligent but faster
+LITE = "Gemini 2.0 Flash Lite" # Intermediate intelligence and speed
+BASE = "Gemini 2.0 Flash" # Intelligent but slower and expensive
+THINK = "Gemini 2.5 Flash" 
+VISION = "Gemini 2.0 Flash"
+IMAGE_GEN = "Gemini 2.0 Flash"
+AUDIO_GEN = "Gemini 2.0 Flash"
+VIDEO_GEN = "Gemini 2.0 Flash"
+PRO = "Gemini 2.0 Pro" # Most intelligent but slowest and most expensive
+LIVE = "Gemini 2.0 Flash Live"
+
+[DRONE]
+API_BASE_URL = "http://127.0.0.1:5000"
+
+[WEATHER]
+API_KEY= "*********"
+API_BASE_URL= "https://api.openweathermap.org/data/2.5/weather"
+
+[ALPHA_VANTAGE]
+API_BASE_URL="https://www.alphavantage.co/query"
+API_KEY="******"
+
+[VNC]
+HOST = "127.0.0.1"
+PORT = 5901
+PASSWORD = "headless"
+
+[GOOGLE]
+# Choose Google Genai Backend: 0 -> ML Dev, 1 -> Vertex
+USE_VERTEXAI = 0
+# Required if USE_VERTEXAI = 1
+CLOUD_PROJECT = ""
+CLOUD_LOCATION = ""
