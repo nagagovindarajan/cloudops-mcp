@@ -40,26 +40,3 @@ class InMemoryStorage:
         """Get all stored key-value pairs (Thread-safe)."""
         with self._data_lock:
             return self._data.copy()
-
-    def set_current_frame(self, frame: str) -> None:
-        """Update the current frame (Thread-safe)."""
-        with self._data_lock:
-            self.current_frame = frame
-
-    def get_current_frame(self) -> str:
-        """Get the latest frame (Thread-safe)."""
-        with self._data_lock:
-            return self.current_frame
-
-# # Example usage
-# if __name__ == "__main__":
-#     storage1 = InMemoryStorage()
-#     storage2 = InMemoryStorage()
-
-#     # Test key-value storage
-#     storage1.set_value("robot_position", (10, 20))
-#     print(storage2.get_value("robot_position"))  # ✅ (10, 20)
-
-#     # Test frame storage
-#     storage1.set_current_frame("frame_12345")
-#     print(storage2.get_current_frame())  # ✅ "frame_12345"

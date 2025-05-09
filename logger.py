@@ -4,7 +4,7 @@ from config import Config
 import logging
 
 class Logger:
-    def __init__(self, filename="robo_swarm.log"):
+    def __init__(self, filename="mcp_server.log"):
         config = Config()
         logs_dir = config.get_logs_dir()
         

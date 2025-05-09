@@ -173,3 +173,5 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 .cursor/mcp.json
+.DS_Store
+assets/.DS_Store

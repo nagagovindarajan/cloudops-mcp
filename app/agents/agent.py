@@ -2,7 +2,6 @@ from typing import Dict, List
 # from google.genai.types import Tool
 # from google.genai import types
 
-from config import Config
 from logger import Logger
 
 import json

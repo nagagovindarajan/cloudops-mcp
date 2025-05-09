@@ -45,15 +45,6 @@ class Config:
     def get_bing_api_endpoint(self):
         return self.config["API_ENDPOINTS"]["BING"]
 
-    def get_bing_api_key(self):
-        return self.config["API_KEYS"]["BING"]
-
-    def get_google_search_api_key(self):
-        return self.config["API_KEYS"]["GOOGLE_SEARCH"]
-
-    def get_google_search_engine_id(self):
-        return self.config["API_KEYS"]["GOOGLE_SEARCH_ENGINE_ID"]
-
     def get_google_search_api_endpoint(self):
         return self.config["API_ENDPOINTS"]["GOOGLE"]
 
@@ -63,45 +54,9 @@ class Config:
     def get_lmstudio_api_endpoint(self):
         return self.config["API_ENDPOINTS"]["LM_STUDIO"]
 
-    def get_claude_api_key(self):
-        return self.config["API_KEYS"]["CLAUDE"]
-
-    def get_openai_api_key(self):
-        return self.config["API_KEYS"]["OPENAI"]
-
     def get_openai_api_base_url(self):
         return self.config["API_ENDPOINTS"]["OPENAI"]
 
-    def get_gemini_api_key(self):
-        return self.config["API_KEYS"]["GEMINI"]
-
-    def get_mistral_api_key(self):
-        return self.config["API_KEYS"]["MISTRAL"]
-
-    def get_groq_api_key(self):
-        return self.config["API_KEYS"]["GROQ"]
-
-    def get_netlify_api_key(self):
-        return self.config["API_KEYS"]["NETLIFY"]
-
-    def get_current_api_key_index(self):
-        return self.config["API_KEYS"]["CURRENT_INDEX"]
-
-    def get_next_api_key_index(self):
-        current_time = int(time.time())
-        index = self.config["API_KEYS"]["CURRENT_INDEX"]
-        last_fetch_time = self.config["API_KEYS"]["CURRENT_INDEX_FETCHED_TIME"]
-        
-        # Check if 60 minutes (3600 seconds) have passed since last update
-        if current_time - last_fetch_time >= 3600:
-            new_index = (index + 1) % len(self.config["API_KEYS"]["GEMINI"])
-            self.config["API_KEYS"]["CURRENT_INDEX"] = new_index
-            self.config["API_KEYS"]["CURRENT_INDEX_FETCHED_TIME"] = current_time
-            self.save_config()
-            return new_index
-        
-        return index
-    
     def get_sqlite_db(self):
         return self.config["STORAGE"]["SQLITE_DB"]
 
@@ -129,20 +84,8 @@ class Config:
     def get_timeout_inference(self):
         return self.config["TIMEOUT"]["INFERENCE"]
 
-    def set_bing_api_key(self, key):
-        self.config["API_KEYS"]["BING"] = key
-        self.save_config()
-
     def set_bing_api_endpoint(self, endpoint):
         self.config["API_ENDPOINTS"]["BING"] = endpoint
-        self.save_config()
-
-    def set_google_search_api_key(self, key):
-        self.config["API_KEYS"]["GOOGLE_SEARCH"] = key
-        self.save_config()
-
-    def set_google_search_engine_id(self, key):
-        self.config["API_KEYS"]["GOOGLE_SEARCH_ENGINE_ID"] = key
         self.save_config()
 
     def set_google_search_api_endpoint(self, endpoint):
@@ -157,36 +100,8 @@ class Config:
         self.config["API_ENDPOINTS"]["LM_STUDIO"] = endpoint
         self.save_config()
 
-    def set_claude_api_key(self, key):
-        self.config["API_KEYS"]["CLAUDE"] = key
-        self.save_config()
-
-    def set_openai_api_key(self, key):
-        self.config["API_KEYS"]["OPENAI"] = key
-        self.save_config()
-
     def set_openai_api_endpoint(self,endpoint):
         self.config["API_ENDPOINTS"]["OPENAI"] = endpoint
-        self.save_config()
-
-    def set_gemini_api_key(self, key):
-        self.config["API_KEYS"]["GEMINI"] = key.split(',')
-        self.save_config()
-
-    def set_mistral_api_key(self, key):
-        self.config["API_KEYS"]["MISTRAL"] = key
-        self.save_config()
-
-    def set_groq_api_key(self, key):
-        self.config["API_KEYS"]["GROQ"] = key
-        self.save_config()
-
-    def set_netlify_api_key(self, key):
-        self.config["API_KEYS"]["NETLIFY"] = key
-        self.save_config()
-
-    def set_current_api_key_index(self, index):
-        self.config["API_KEYS"]["CURRENT_INDEX"] = index
         self.save_config()
 
     def set_logging_rest_api(self, value):
@@ -254,16 +169,6 @@ class Config:
 
     def get_alpha_vantage_api_base_url(self):
         return self.config["ALPHA_VANTAGE"]["API_BASE_URL"]
-
-    # VNC getters
-    def get_vnc_host(self):
-        return self.config["VNC"]["HOST"]
-    
-    def get_vnc_port(self):
-        return self.config["VNC"]["PORT"]
-    
-    def get_vnc_password(self):
-        return self.config["VNC"]["PASSWORD"]
     
     def get_google_use_vertexai(self):
         return self.config["GOOGLE"]["USE_VERTEXAI"]
@@ -273,18 +178,6 @@ class Config:
     
     def get_google_cloud_location(self):
         return self.config["GOOGLE"]["CLOUD_LOCATION"]
-
-    def set_vnc_host(self, host):
-        self.config["VNC"]["HOST"] = host
-        self.save_config()
-    
-    def set_vnc_port(self, port):
-        self.config["VNC"]["PORT"] = port
-        self.save_config()
-    
-    def set_vnc_password(self, password):
-        self.config["VNC"]["PASSWORD"] = password
-        self.save_config()
 
     def set_google_use_vertexai(self, value):
         self.config["GOOGLE"]["USE_VERTEXAI"] = value
