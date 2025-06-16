@@ -1,0 +1,72 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cloudops-mcp"
+version = "1.0.0"
+description = "A Model Context Protocol server for AWS cloud operations"
+readme = "README.md"
+authors = [
+    {name = "CloudOps-MCP Contributors", email = "nagagovindarajan@gmail.com"}
+]
+license = {text = "MIT"}
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+    "Topic :: System :: Systems Administration",
+]
+dependencies = [
+    "requests",
+    "python-dotenv",
+    "fastapi",
+    "uvicorn",
+    "pydantic",
+    "starlette==0.46.2",
+    "diagrams",
+    "mcp==1.7.1",
+    "fastapi-mcp==0.3.3",
+    "boto3",
+    "google-genai>=1.14.0",
+    "langchain",
+    "langchain-community",
+    "langchain-chroma",
+    "google-adk>=0.4.0",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/yourusername/cloudops-mcp"
+"Bug Reports" = "https://github.com/yourusername/cloudops-mcp/issues"
+"Source" = "https://github.com/yourusername/cloudops-mcp"
+"Documentation" = "https://github.com/yourusername/cloudops-mcp#readme"
+
+[project.scripts]
+cloudops-mcp = "run:main"
+
+[tool.black]
+line-length = 100
+target-version = ["py39", "py310", "py311"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
