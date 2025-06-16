@@ -55,7 +55,9 @@ Check the video below for the steps:
 
 Note: This will work only with Agent mode in Copilot. Also use Claude Sonnet 3.5 and above or equivalent for best results.
 
-https://github.com/user-attachments/assets/3be44494-434f-4379-88a3-8ee53d36fdfc
+
+https://github.com/user-attachments/assets/4f3d98d7-7b4b-48d6-9728-65a6263e6d61
+
 
 ## Example use cases 
 
@@ -77,8 +79,7 @@ Which S3 buckets had public access in the last week?
 ## Example video:
 
 
-https://github.com/user-attachments/assets/0348e761-ed88-4251-8b16-09e95a2d5a23
-
+https://github.com/user-attachments/assets/21b1dd3c-99e7-4517-beef-c7286771fcd4
 
 
 ## Disclaimer
