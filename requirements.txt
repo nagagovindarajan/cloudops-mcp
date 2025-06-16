@@ -3,9 +3,10 @@ python-dotenv
 fastapi
 uvicorn
 pydantic
-starlette
+starlette==0.46.2
 diagrams
-fastapi-mcp
+mcp==1.7.1
+fastapi-mcp==0.3.3
 pytest
 pytest-cov
 pytest-asyncio
@@ -13,11 +14,10 @@ pytest-mock
 pytest-httpx
 pytest-mypy
 trio
-
 protobuf
 tiktoken
 boto3
-google-genai
+google-genai==1.14.0
 ollama
 anthropic
 openai
@@ -27,4 +27,4 @@ groq
 langchain
 langchain-community
 langchain-chroma
-google-adk
+google-adk==0.4.0

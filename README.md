@@ -16,7 +16,7 @@ source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-4. Get an API key from Google Gemini AI studio
+4. Get an API key from Google Gemini AI studio (Use your personal account for free tier)
 5. Create a `.env` file in the root directory with your API key:
 ```
 GOOGLE_GENAI_USE_VERTEXAI=0
@@ -33,6 +33,10 @@ AWS_PROFILE=your_profile_name
 Start the application with:
 ```bash
 uvicorn app.main:app --reload
+
+or
+
+python run.py
 ```
 
 The MCP server API will be available at http://127.0.0.1:8000/mcp
@@ -49,15 +53,9 @@ http://127.0.0.1:8000/mcp
 
 Check the video below for the steps:
 
-Note: This will work only with Agent mode in Copilot. Also use Claude Sonnet 3.7 for best results.
+Note: This will work only with Agent mode in Copilot. Also use Claude Sonnet 3.5 and above or equivalent for best results.
 
-<p align="center">
-  <video controls width="80%" title="Setup Video">
-    <source src="assets/mcp-setup.mp4" type="video/mp4">
-    Your browser does not support the video tag. 
-    You can <a href="assets/mcp-setup.mp4">download the video here</a>.
-  </video>
-</p>
+https://github.com/user-attachments/assets/3be44494-434f-4379-88a3-8ee53d36fdfc
 
 ## Example use cases 
 
@@ -78,21 +76,20 @@ Which S3 buckets had public access in the last week?
 
 ## Example video:
 
-<p align="center">
-  <video controls width="80%" title="Demo Video">
-    <source src="assets/mcp-demo.mp4" type="video/mp4">
-    Your browser does not support the video tag. 
-    You can <a href="assets/mcp-demo.mp4">download the video here</a>.
-  </video>
-</p>
+
+https://github.com/user-attachments/assets/0348e761-ed88-4251-8b16-09e95a2d5a23
 
 
 
 ## Disclaimer
 
-This is a proof of concept and not production ready. It is not intended to be used in production environments. It is only for demonstration purposes.
-
-Also dont give aws profile with admin access to this mcp server. Create a new profile with limited access and use that profile to run the agent.
+<p style="color:red;">
+<b>Important: This is a proof-of-concept application and is NOT production-ready.</b> It is intended for demonstration and testing purposes only.
+<br><br>
+<b>Security Risk:</b> Do NOT provide AWS profiles with administrative privileges to this MCP server. Always create and use a new AWS profile with the minimum necessary permissions.
+<br><br>
+<b>Potential for Harm:</b> There is currently no robust framework in place to prevent the execution of destructive commands. Use with extreme caution.
+</p>
 
 ## TODO
 
